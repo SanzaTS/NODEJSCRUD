@@ -15,7 +15,7 @@ const UserSchema = new  mongoose.Schema({
 
 });
 
-// encrypt the password before storing
+
 
 
 module.exports = mongoose.model('User',UserSchema)
