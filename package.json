@@ -1,6 +1,9 @@
 {
   "name": "nodejscrud",
   "version": "1.0.0",
+    "engines": { 
+      "node": "14.18.0" 
+   },
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -17,6 +20,7 @@
   },
   "homepage": "https://github.com/SanzaTS/NODEJSCRUD#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^4.1.2",
