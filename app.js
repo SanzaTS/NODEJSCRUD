@@ -33,6 +33,10 @@ app.use('/user', userRouter)
 app.use('/cart', cartRouter)
 app.use('/order', orderRouter)
 
-app.listen(9000, () =>{
+const PORT = process.env.PORT || 9000;
+
+//app.listen(PORT);
+
+app.listen(PORT, () =>{
     console.log("Server started")
 })
