@@ -19,6 +19,19 @@ conn.on('open', () => {
 app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(express.json())
 
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve static files
+  app.use(express.static(path.resolve(__dirname, '../client', 'build')));
+
+  app.get('*', (req, res, next) => {
+    // Serve index.html file if it doesn't recognize the route
+    res.sendFile(path.resolve(__dirname, '../client', 'build', '')); // <- Here !
+  });
+}
+
+
+
 const alienRouter = require('./routes/aliens')
 const productRouter = require('./routes/ProducRoute')
 const categoryRouter = require('./routes/CategoryRoute')
