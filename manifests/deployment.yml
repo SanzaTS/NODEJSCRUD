@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "nodeangcluster-a9cc"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "nodeangcluster-a9cc"
+  template:
+    metadata:
+      labels:
+        app: "nodeangcluster-a9cc"
+    spec:
+      containers:
+        - name: "nodeangcluster-a9cc"
+          image: "saneleregistry.azurecr.io/nodeangcluster"
+          ports:
+          - containerPort: 9000
